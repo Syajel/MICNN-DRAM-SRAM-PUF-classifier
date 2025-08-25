@@ -1,0 +1,15 @@
+majority zeroes
+
+zero to one: 0.00005
+one to zero: 0.01
+
+
+3 different dram sets trained with metadata, compressed 4 layer model trained for EPOCHSxBATCHSIZE
+
+3metacompact4l_30x8:
+DRAM clean Accuracy: 96.49%
+DRAM corr Accuracy: 96.05%
+DRAM noise Accuracy: 92.21%
+SRAM Total: 100%
+
+
