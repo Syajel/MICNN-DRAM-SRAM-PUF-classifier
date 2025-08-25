@@ -48,32 +48,32 @@ A Multi-Input CNN model is used:
 ## Setup Instructions
 
 ### 1. Clone the repository
-
+```
 git clone https://github.com/Syajel/MICNN-DRAM-SRAM-PUF-classifier.git
 cd multi-input-puf-classifier
-
+```
 ### 2. Create a virtual environment
-
+```
 python -m venv venv
-
+```
 ### 3. Activate the environment
 
 * On **Linux/macOS**:
-
+```
 source venv/bin/activate
-
+```
 * On **Windows**:
-
+```
 venv\Scripts\activate
-
+```
 ### 4. Install dependencies inside the environment
-
+```
 pip install -r requirements.txt
-
+```
 ### 5. (Optional) Deactivate when done
-
+```
 deactivate
-
+```
 
 ---
 
@@ -82,25 +82,25 @@ deactivate
 ### Move datasets to directory "./data/DRAM/raw" and "./data/SRAM/raw"
 
 ### Compress and split the raw responses into train and test datasets
-
+```
 python -m src.split_data
-
+```
 ### Set noise probabilities in "augment_dram_data.py" augment DRAM data
-
+```
 python -m src.augment_dram_data
-
+```
 ### Augment SRAM data
-
+```
 python -m src.augment_sram_data
-
+```
 ### Train the model
-
+```
 python -m src.train
-
+```
 ### Evaluate the model
-
+```
 python -m src.test
-
+```
 
 ## Features
 
