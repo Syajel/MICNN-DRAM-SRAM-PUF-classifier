@@ -17,63 +17,63 @@ A Multi-Input CNN model is used:
 ---
 
 ## Project Structure
-
+```
 .
-├── data/               # Input DRAM and SRAM response files
-│   ├── dram/			
-│   	 ├── raw/			# DRAM raw dataset
-│   	 ├── train/		    # DRAM training data
-│  		 └── test/      	# DRAM test data
+├── data/                   # Input DRAM and SRAM response files
+│   ├── dram/
+│   │   ├── raw/            # DRAM raw dataset
+│   │   ├── train/          # DRAM training data
+│   │   └── test/           # DRAM test data
 │   └── sram/
-│   	 ├── raw/			# SRAM raw dataset
-│   	 ├── train/		    # SRAM training data
-│  		 └── test/      	# SRAM test data
-├── models/             # Trained model weights
-├── plots/              # Evaluation figures
+│       ├── raw/            # SRAM raw dataset
+│       ├── train/          # SRAM training data
+│       └── test/           # SRAM test data
+├── models/                 # Trained model weights
+├── plots/                  # Evaluation figures and results
 ├── src/
-│   ├── augment_dram_data.py	# DRAM augmentation script
-│   ├── augment_sram_data.py	# SRAM augmentation script
-│   ├── split_data.py        	# Data compression and splitting into train and test folders script
-│   ├── plot_results.py     	# Graph plotting script
-│   ├── load_datasets.py 		# Dataset loader
-│   ├── model.py        		# CNN Model
-│   ├── train.py        		# Training script
-│   ├── test.py         		# Evaluation script
-│   └── __init__.py        	
-├── requirements.txt    # Python dependencies
-└── README.md           # This file
-
+│   ├── augment_dram_data.py    # DRAM augmentation script
+│   ├── augment_sram_data.py    # SRAM augmentation script
+│   ├── split_data.py           # Data compression and splitting into train and test folders
+│   ├── plot_results.py         # Graph plotting script
+│   ├── load_datasets.py        # Dataset loader
+│   ├── model.py                # CNN model definition
+│   ├── train.py                # Training script
+│   ├── test.py                 # Evaluation script
+│   └── __init__.py
+├── requirements.txt        # Python dependencies
+└── README.md               # This file
+```
 ---
 
 ## Setup Instructions
 
 ### 1. Clone the repository
-
+```
 git clone https://github.com/Syajel/MICNN-DRAM-SRAM-PUF-classifier.git
 cd multi-input-puf-classifier
-
+```
 ### 2. Create a virtual environment
-
+```
 python -m venv venv
-
+```
 ### 3. Activate the environment
 
 * On **Linux/macOS**:
-
+```
 source venv/bin/activate
-
+```
 * On **Windows**:
-
+```
 venv\Scripts\activate
-
+```
 ### 4. Install dependencies inside the environment
-
+```
 pip install -r requirements.txt
-
+```
 ### 5. (Optional) Deactivate when done
-
+```
 deactivate
-
+```
 
 ---
 
@@ -82,25 +82,25 @@ deactivate
 ### Move datasets to directory "./data/DRAM/raw" and "./data/SRAM/raw"
 
 ### Compress and split the raw responses into train and test datasets
-
+```
 python -m src.split_data
-
+```
 ### Set noise probabilities in "augment_dram_data.py" augment DRAM data
-
+```
 python -m src.augment_dram_data
-
+```
 ### Augment SRAM data
-
+```
 python -m src.augment_sram_data
-
+```
 ### Train the model
-
+```
 python -m src.train
-
+```
 ### Evaluate the model
-
+```
 python -m src.test
-
+```
 
 ## Features
 
