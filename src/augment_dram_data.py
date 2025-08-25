@@ -15,7 +15,7 @@ def corrupt(data_dir):
             corrupted_data = data[:corrupt_point] + b'\x00' * (len(data) - corrupt_point)
             with open(file_path, 'wb') as f:
                 f.write(corrupted_data)
-        print(f"✅ Processed {root}")
+        print(f"Processed {root}")
 
 
 def noise(data_dir,z,o):

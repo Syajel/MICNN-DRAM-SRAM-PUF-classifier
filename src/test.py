@@ -7,13 +7,17 @@ from src.plot_results import plot
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using {device}")
 
-batch_size = 8 
+batch_size = 8      # Batch size
+
+# Load datasets
 test_dataset_dram = DRAMSRAMBinaryDataset(root_dir="data", subset="test", memory_type="dram")
 test_dataset_sram = DRAMSRAMBinaryDataset(root_dir="data", subset="test", memory_type="sram")
 
+# Separate DRAM & SRAM Loaders
 test_loader_dram = DataLoader(test_dataset_dram, batch_size=batch_size, shuffle=False)
 test_loader_sram = DataLoader(test_dataset_sram, batch_size=batch_size, shuffle=False)
 
+# Initialize and load model
 model = MultiInputCNN_SRAM().to(device)
 model.load_state_dict(torch.load("models/3metacompact4l_30x8.pth", map_location=device))            # Model to be loaded
 model.eval()

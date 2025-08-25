@@ -168,7 +168,6 @@ class DRAMSRAMBinaryDataset(Dataset):
         if is_sram:
             return image_tensor, torch.tensor(label, dtype=torch.long)
         else:
-            #image_tensor = F.interpolate(image_tensor.unsqueeze(0), size=(2048, 1024), mode='bilinear', align_corners=False).squeeze(0)
             metadata_tensor = torch.tensor(self.metadata[idx], dtype=torch.float32)
             return image_tensor, metadata_tensor, torch.tensor(label, dtype=torch.long)
 

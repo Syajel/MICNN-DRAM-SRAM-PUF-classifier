@@ -13,7 +13,7 @@ def corrupt_and_add_noise_sram(data_dir,i,j):
             file_path = os.path.join(root, file_name)
             with open(file_path, 'rb') as f:
                 data = f.read()
-            corrupt_point = int(len(data) * 0.8)  # Set last 20% to zeros
+            corrupt_point = int(len(data) * 0.8)  # Sets last 20% to zeros
             corrupted_data = data[:corrupt_point] + b'\x00' * (len(data) - corrupt_point)
             with open(file_path, 'wb') as f:
                 f.write(corrupted_data)
